@@ -38,12 +38,9 @@ class AccessController{
 
     if(response.statusCode == 200){
       _sharedPreferences = await SharedPreferences.getInstance();
-      // _sharedPreferences.setString('token', jsonDecode(response.body)['token']);
-      // _sharedPreferences.setString('username', jsonDecode(response.body)['username']);
-      // _sharedPreferences.setInt('userId', jsonDecode(response.body)['id']);
-      _sharedPreferences.setString('token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c');
-      _sharedPreferences.setString('username', 'emilys');
-      _sharedPreferences.setInt('userId', 1);
+      _sharedPreferences.setString('token', jsonDecode(response.body)['accessToken']);
+      _sharedPreferences.setString('username', jsonDecode(response.body)['username']);
+      _sharedPreferences.setInt('userId', jsonDecode(response.body)['id']);
 
       return true;
     } else {
