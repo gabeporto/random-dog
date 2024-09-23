@@ -1,3 +1,5 @@
+import 'package:dog_flutter_application/controllers/access_controller.dart';
+import 'package:dog_flutter_application/views/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:dog_flutter_application/components/app_bar_component.dart';
 import 'package:dog_flutter_application/components/detail_row_component.dart';
@@ -70,7 +72,16 @@ class ProfilePage extends StatelessWidget {
               alignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  onPressed: (){},
+                  onPressed: () async {
+                    final navigator = Navigator.of(context);
+                    bool logout = await AccessController.instance.logout();
+
+                    if(logout){
+                      navigator.pushReplacement(
+                        MaterialPageRoute(builder: (context) => const LoginPage())
+                      );
+                    }
+                  },
                   child: const Text('Logout') ,
                 ),
               ],
