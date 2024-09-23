@@ -1,8 +1,9 @@
 import 'package:dog_flutter_application/components/form_text_field_component.dart';
 import 'package:dog_flutter_application/components/main_button_component.dart';
 import 'package:dog_flutter_application/controllers/access_controller.dart';
-import 'package:dog_flutter_application/views/home_page.dart';
+import 'package:dog_flutter_application/views/dog_page.dart';
 import 'package:flutter/material.dart';
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -25,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
       if(login) {
         navigator.pushReplacement(
           MaterialPageRoute(
-            builder: (context) => const HomePage(),
+            builder: (context) => const DogPage(),
           )
         );
       } else {
@@ -43,10 +44,12 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 244, 228, 247),
       body: Form(
         key: _formKey,
         child: Center(
           child: Card(
+            surfaceTintColor: Colors.white,
             elevation: 8,
             child: Container(
               padding: const EdgeInsets.all(36.0),

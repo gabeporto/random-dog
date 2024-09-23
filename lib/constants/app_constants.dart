@@ -1,3 +1,4 @@
 const Map<String, dynamic> appConstants = {
-  'baseApiUrl': 'https://dummyjson.com'
+  'dummyApiUrl': 'https://dummyjson.com',
+  'dogApiUrl': 'https://dog.ceo/api/breeds/image/random'
 };
